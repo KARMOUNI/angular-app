@@ -3,7 +3,7 @@
     <div *ngIf="QuestionsList.length === 0">
         <p>Aucune question disponible.</p>
     </div>
-    <table class="table table-striped" *ngIf="QuestionsList.length > 0">
+    <table class="table table-striped table-primary" *ngIf="QuestionsList.length > 0">
         <thead>
         <tr>
             <th>ID</th>
@@ -20,11 +20,11 @@
             <td>{{ question.category }}</td>
             <td>{{ question.options }}</td>
             <td>
-                <a [routerLink]="['/app/list/question', question.questionId]" class="btn btn-info">Détails</a>
+                <a [routerLink]="['/app/list/question', question.questionId]" class="btn btn-info w-100 my-1">Détail</a>
                 <br/>
-                <a [routerLink]="['/app/update/question', question.questionId]" class="btn btn-info">Modifier</a>
+                <a [routerLink]="['/app/update/question', question.questionId]" class="btn btn-info w-100 my-1">Modifier</a>
                 <br/>
-                <a (click)="deleteQuestion(question.questionId)" class="btn btn-info">Supprimer</a>
+                <a (click)="deleteQuestion(question.questionId)" class="btn btn-info w-100 my-1">Supprimer</a>
             </td>
         </tr>
         </tbody>

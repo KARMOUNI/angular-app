@@ -1,11 +1,12 @@
-<p>quiz-submit works!</p>
+<h3 class="text-uppercase">Nouvelle Quiz</h3>
+<hr/>
 <div class="add-quiz-container">
     <h2>Ajouter un Quiz</h2>
-    <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+    <form [formGroup]="quizForm" (ngSubmit)="onSubmit()" class="row g-3">
         <!-- Quiz Name -->
         <label for="quizName">Nom du Quiz:</label>
         <input id="quizName" formControlName="quizName" type="text" />
-        <div *ngIf="quizForm.get('quizName')?.invalid && quizForm.get('quizName')?.touched">
+        <div *ngIf="quizForm.get('quizName')?.invalid && quizForm.get('quizName')?.touched"class="alert alert-warning">
             Le nom du quiz est requis.
         </div>
 
@@ -22,6 +23,6 @@
         </ng-template>
 
         <!-- Submit Button -->
-        <button type="submit" [disabled]="quizForm.invalid || selectedQuestions.length === 0">Soumettre le Quiz</button>
+        <button type="submit" [disabled]="quizForm.invalid || selectedQuestions.length === 0" class="btn btn-primary text-uppercase">Soumettre le Quiz</button>
     </form>
 </div>

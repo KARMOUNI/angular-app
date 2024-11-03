@@ -1,35 +1,35 @@
-<p>question-form works!</p>
-
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+<h3 class="text-uppercase">Nouvelle Question</h3>
+<hr/>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="row g-3">
     <label for="questionText">Question:</label>
     <input id="questionText" formControlName="questionText" type="text">
-    <div *ngIf="myForm.get('questionText')?.invalid && myForm.get('questionText')?.touched">
+    <div *ngIf="myForm.get('questionText')?.invalid && myForm.get('questionText')?.touched" class="alert alert-warning">
         Question is required.
     </div>
 
     <label for="options">Proposition de réponse:</label>
     <textarea id="options" formControlName="options" rows="6"></textarea>
-    <div *ngIf="myForm.get('options')?.invalid && myForm.get('options')?.touched">
+    <div *ngIf="myForm.get('options')?.invalid && myForm.get('options')?.touched" class="alert alert-warning">
         Response proposition is required.
     </div>
 
     <label for="correctAnswer">La réponse correct:</label>
     <input id="correctAnswer" formControlName="correctAnswer" type="text">
-    <div *ngIf="myForm.get('correctAnswer')?.invalid && myForm.get('correctAnswer')?.touched">
+    <div *ngIf="myForm.get('correctAnswer')?.invalid && myForm.get('correctAnswer')?.touched" class="alert alert-warning">
         Correct Response is required.
     </div>
 
     <label for="category">Catégorie:</label>
     <input id="category" formControlName="category" type="text">
-    <div *ngIf="myForm.get('category')?.invalid && myForm.get('category')?.touched">
+    <div *ngIf="myForm.get('category')?.invalid && myForm.get('category')?.touched" class="alert alert-warning">
         Categorie is required.
     </div>
 
     <label for="level">Niveau de difficulté:</label>
     <input id="level" formControlName="level" type="text">
-    <div *ngIf="myForm.get('level')?.invalid && myForm.get('level')?.touched">
+    <div *ngIf="myForm.get('level')?.invalid && myForm.get('level')?.touched" class="alert alert-warning">
         level is required.
     </div>
 
-    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+    <button type="submit" [disabled]="myForm.invalid" class="btn btn-primary text-uppercase">Soumettre la question</button>
 </form>

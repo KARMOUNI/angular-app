@@ -1,9 +1,10 @@
 <div class="quiz-container">
-    <h2>Détails du Quiz</h2>
+    <h3  *ngIf="quiz" class="text-uppercase">détail de la question n°:{{ quiz.quizId }}</h3>
+    <hr/>
     <div *ngIf="quiz">
         <!-- Display Quiz ID and Name -->
         <p><strong>ID du Quiz:</strong> {{ quiz.quizId }}</p>
-        <p><strong>Nom du Quiz:</strong> {{ quiz.quizName }}</p>
+        <p><strong>Désignation de la Quiz:</strong> {{ quiz.quizName }}</p>
 
         <!-- Display Questions if available -->
         <h3>Questions</h3>
