@@ -1,0 +1,12 @@
+{
+  "/api-question/*": {
+    "target": "http://spring-boot-app:8080",
+    "secure": false,
+    "logLevel": "debug"
+  },
+  "/api-quiz/*": {
+    "target": "http://spring-boot-app:8080",
+    "secure": false,
+    "logLevel": "debug"
+  }
+}

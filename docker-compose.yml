@@ -1,0 +1,20 @@
+version: '3.7'
+
+services:
+  angular-app:
+    build:
+      context: .
+      args:
+        API_BASE_URL: http://127.0.0.1:8080/
+    container_name: angular-app
+    ports:
+      - '4200:4200'
+    volumes:
+      - ./:/angular-app
+    environment:
+      - STYLE=css
+    networks:
+      - quizz_app
+networks:
+  quizz_app:
+    external: true
