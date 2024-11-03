@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class QuestionService {
-  private apiUrl = 'http://localhost:4200/api-question'; // Set your base URL
+  private apiUrl = 'api-question'; // Set your base URL
 
   constructor(private http: HttpClient) {}
 
@@ -15,20 +15,19 @@ export class QuestionService {
     return this.http.get(`${this.apiUrl}/all`); // Make the GET request
   }
 
-
   getQuestionById(id: number): Observable<any> {
     return this.http.get(`${this.apiUrl}/${id}`);
   }
 
   addQuestion(question: any): Observable<any> {
-    return this.http.post(`${this.apiUrl}/new`, question);
+    return this.http.post(`${this.apiUrl}/new`, question , { responseType: 'text' });
   }
 
   updateQuestion(id: number, question: any): Observable<any> {
-    return this.http.put(`${this.apiUrl}/${id}`, question);
+    return this.http.put(`${this.apiUrl}/${id}`, question , { responseType: 'text' });
   }
 
   deleteQuestion(id: number): Observable<any> {
-    return this.http.delete(`${this.apiUrl}/${id}`);
+    return this.http.delete(`${this.apiUrl}/${id}`, { responseType: 'text' });
   }
 }

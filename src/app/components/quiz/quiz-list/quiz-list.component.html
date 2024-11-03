@@ -1,0 +1,32 @@
+<div class="container">
+    <h2>Liste des Quiz</h2>
+    <div *ngIf="QuizList.length === 0">
+        <p>Aucune quiz disponible.</p>
+    </div>
+    <table class="table table-striped" *ngIf="QuizList.length > 0">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Quiz</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let quiz of QuizList">
+            <td>{{ quiz.quizId }}</td>
+            <td>{{ quiz.quizName }}</td>
+            <td>
+                <a [routerLink]="['/app/list/quiz', quiz.quizId]" class="btn btn-info">Détails</a>
+                <br/>
+                <a [routerLink]="['/app/update/quiz', quiz.quizId]" class="btn btn-info">Modifier</a>
+                <br/>
+<!--                <a (click)="deleteQuestion(quiz.quizId)" class="btn btn-info">Supprimer</a>-->
+            </td>
+        </tr>
+        </tbody>
+    </table>
+
+    <div>
+        <a routerLink="/app/new/quiz" class="btn btn-primary">Ajouter une Question</a>
+    </div>
+</div>

@@ -5,12 +5,15 @@ import { HttpClientModule } from '@angular/common/http'; // Import HttpClientMod
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { QuestionListComponent } from './components/question-list/question-list.component';
-import { QuestionDetailsComponent } from './components/question-details/question-details.component';
-import { QuestionFormComponent } from './components/question-form/question-form.component';
-import { QuizListComponent } from './components/quiz-list/quiz-list.component';
-import { QuizDetailsComponent } from './components/quiz-details/quiz-details.component';
-import { QuizSubmitComponent } from './components/quiz-submit/quiz-submit.component';
+//Import All Component for Question
+import { QuestionListComponent } from './components/question/question-list/question-list.component';
+import { QuestionDetailsComponent } from './components/question/question-details/question-details.component';
+import { QuestionFormComponent } from './components/question/question-form/question-form.component';
+import { QuestionUpdateComponent } from './components/question/question-update/question-update.component';
+//Import All Component for Quiz
+import { QuizListComponent } from './components/quiz/quiz-list/quiz-list.component';
+import { QuizDetailsComponent } from './components/quiz/quiz-details/quiz-details.component';
+import { QuizSubmitComponent } from './components/quiz/quiz-submit/quiz-submit.component';
 import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
@@ -20,6 +23,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     QuestionListComponent,
     QuestionDetailsComponent,
     QuestionFormComponent,
+    QuestionUpdateComponent,
     QuizListComponent,
     QuizDetailsComponent,
     QuizSubmitComponent

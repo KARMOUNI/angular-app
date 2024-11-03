@@ -1,6 +1,19 @@
 <!-- src/app/components/home/home.component.html -->
-<div class="home-container">
-    <h1>Bienvenue dans le QuizApp</h1>
-    <p>Pour commencer, démarrez une nouvelle session de quiz.</p>
-    <button mat-raised-button color="primary" (click)="startSession()">Commencer une session</button>
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <svg class="bi mt-4 mb-3" style="color: var(--bs-indigo);" width="100" height="100"><use xlink:href="#bootstrap"></use></svg>
+        <h1 class="text-body-emphasis">Bienvenue chez QuizApp premier Réfelxe </h1>
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+            Tester vos capacitées en développement "Python, JAVA, HTML et C".
+            <code>QuizApp</code> et votre guide d'amélioration
+        </p>
+        <div class="d-inline-flex gap-2 mb-5">
+            <a routerLink="/app/list/quiz" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill">
+                Liste des Quizs
+            </a>
+            <a routerLink="/app/new/question" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">
+                Manage Question/Quiz
+            </a>
+        </div>
+    </div>
 </div>

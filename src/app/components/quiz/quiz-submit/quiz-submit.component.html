@@ -1,0 +1,27 @@
+<p>quiz-submit works!</p>
+<div class="add-quiz-container">
+    <h2>Ajouter un Quiz</h2>
+    <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+        <!-- Quiz Name -->
+        <label for="quizName">Nom du Quiz:</label>
+        <input id="quizName" formControlName="quizName" type="text" />
+        <div *ngIf="quizForm.get('quizName')?.invalid && quizForm.get('quizName')?.touched">
+            Le nom du quiz est requis.
+        </div>
+
+        <!-- Select Questions from Existing List -->
+        <h3>Questions Disponibles</h3>
+        <div *ngIf="availableQuestions.length > 0; else noQuestions">
+            <div *ngFor="let question of availableQuestions">
+                <input type="checkbox" (change)="onQuestionToggle(question, $event)" />
+                {{ question.questionText }}
+            </div>
+        </div>
+        <ng-template #noQuestions>
+            <p>Aucune question disponible dans la base de données.</p>
+        </ng-template>
+
+        <!-- Submit Button -->
+        <button type="submit" [disabled]="quizForm.invalid || selectedQuestions.length === 0">Soumettre le Quiz</button>
+    </form>
+</div>

@@ -6,19 +6,32 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class QuizService {
-  private baseUrl = 'http://localhost:8085';
+  private apiUrl = 'api-quiz'; // Set your base URL
 
   constructor(private http: HttpClient) {}
 
+  getAllQuiz(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/all`); // Make the GET request
+  }
+
+
   getQuizById(id: number): Observable<any> {
-    return this.http.get(`${this.baseUrl}/quiz/${id}`);
+    return this.http.get(`${this.apiUrl}/${id}`);
+  }
+
+  addQuiz(quiz: any): Observable<any> {
+    return this.http.post(`${this.apiUrl}/new`, quiz , { responseType: 'text' });
+  }
+
+  getQuestionOFQuizById(id: number): Observable<any> {
+    return this.http.get(`${this.apiUrl}/questionofquiz/${id}`);
   }
 
   createQuiz(name: string, category: string, noOfQuestions: number): Observable<any> {
-    return this.http.post(`${this.baseUrl}/quiz/${name}/${category}/${noOfQuestions}`, {});
+    return this.http.post(`${this.apiUrl}/quiz/${name}/${category}/${noOfQuestions}`, {});
   }
 
   submitQuiz(id: number): Observable<any> {
-    return this.http.post(`${this.baseUrl}/quizzes/submit/${id}`, {});
+    return this.http.post(`${this.apiUrl}/quizzes/submit/${id}`, {});
   }
 }

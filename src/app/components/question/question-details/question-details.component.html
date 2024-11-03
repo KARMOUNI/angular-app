@@ -1,0 +1,17 @@
+<div class="container">
+    <h2>Détail des Questions</h2>
+    <!-- question.component.html -->
+    <div *ngIf="question">
+        <h2>Question {{ question.questionId }}</h2>
+        <p>{{ question.questionText }}</p>
+        <p>{{ question.category }}</p>
+    </div>
+
+    <div *ngIf="!question">
+        Loading question...
+    </div>
+
+    <div>
+        <a routerLink="/app/new/question" class="btn btn-primary">Ajouter une Question</a>
+    </div>
+</div>

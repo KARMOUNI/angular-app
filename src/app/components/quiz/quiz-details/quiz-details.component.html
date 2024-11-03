@@ -1,0 +1,24 @@
+<div class="quiz-container">
+    <h2>Détails du Quiz</h2>
+    <div *ngIf="quiz">
+        <!-- Display Quiz ID and Name -->
+        <p><strong>ID du Quiz:</strong> {{ quiz.quizId }}</p>
+        <p><strong>Nom du Quiz:</strong> {{ quiz.quizName }}</p>
+
+        <!-- Display Questions if available -->
+        <h3>Questions</h3>
+        <div *ngIf="quiz.questions.length > 0; else noQuestions">
+            <ul>
+                <li *ngFor="let question of quiz.questions">
+                    {{ question.questionText }}
+                </li>
+            </ul>
+        </div>
+        <ng-template #noQuestions>
+            <p>Aucune question disponible.</p>
+        </ng-template>
+    </div>
+    <div *ngIf="!quiz">
+        <p>Chargement du quiz...</p>
+    </div>
+</div>
