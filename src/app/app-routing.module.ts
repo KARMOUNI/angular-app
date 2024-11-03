@@ -8,8 +8,8 @@ import {QuizDetailsComponent} from "./components/quiz-details/quiz-details.compo
 
 const routes: Routes = [
   { path: '', component: HomeComponent },  // Page d'accueil par défaut
-  { path: 'questionlist', component: QuestionListComponent },  // Page d'accueil par défaut
-  { path: 'questionlist/new', component: QuestionFormComponent },  // Page d'accueil par défaut
+  { path: 'app/list/question', component: QuestionListComponent },  // Page d'accueil par défaut
+  { path: 'app/list/question/new', component: QuestionFormComponent },  // Page d'accueil par défaut
   { path: 'quiz', component: QuizListComponent },  // Page d'accueil par défaut
   { path: 'quiz/:id', component: QuizDetailsComponent },  // Page d'accueil par défaut
 ];
