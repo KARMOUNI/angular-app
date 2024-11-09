@@ -1,10 +1,17 @@
 <div class="container">
-    <h3  *ngIf="question" class="text-uppercase">détail de la question n°:{{ question.questionId }}</h3>
+    <h3  *ngIf="question" class="text-uppercase">détail de la question n°:{{ question.questionId }} </h3>
     <hr/>
     <!-- question.component.html -->
     <div *ngIf="question">
-        <p>{{ question.questionText }}</p>
-        <p>{{ question.category }}</p>
+        <p>
+            <label class="col-4">Catégorie : </label>
+            {{ question.category }}</p>
+        <p><label class="col-4">Question : </label>
+            {{ question.questionText }}</p>
+        <p><label class="col-4">Proposition de réponse : </label>
+            {{ question.options }}</p>
+        <p><label class="col-4">Réponse attendue :</label>
+            {{ question.correctAnswer }} </p>
     </div>
 
     <div *ngIf="!question">
@@ -12,6 +19,6 @@
     </div>
 
     <div>
-        <a routerLink="/app/new/question" class="btn btn-primary">Ajouter une Question</a>
+        <a [routerLink]="['/app/update/question', question.questionId]" class="btn btn-primary float-end w-25 my-1">Modifier</a>
     </div>
 </div>

@@ -10,6 +10,12 @@
             Le nom du quiz est requis.
         </div>
 
+        <label for="quizDescription">Déscription du Quiz:</label>
+        <textarea id="quizDescription" formControlName="quizDescription" rows="4"></textarea>
+        <div *ngIf="quizForm.get('quizDescription')?.invalid && quizForm.get('quizDescription')?.touched"class="alert alert-warning">
+            La description du quiz est requis.
+        </div>
+
         <!-- Select Questions from Existing List -->
         <h3>Questions Disponibles</h3>
         <div *ngIf="availableQuestions.length > 0; else noQuestions">

@@ -20,7 +20,12 @@
     </div>
 
     <label for="category">Catégorie:</label>
-    <input id="category" formControlName="category" type="text">
+    <select id="category" formControlName="category">
+        <option value="JAVA">JAVA</option>
+        <option value="PYTHON">PYTHON</option>
+        <option value="C">C</option>
+        <option value="HTML">HTML</option>
+    </select>
     <div *ngIf="myForm.get('category')?.invalid && myForm.get('category')?.touched" class="alert alert-warning">
         Categorie is required.
     </div>

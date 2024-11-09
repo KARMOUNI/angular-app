@@ -16,6 +16,9 @@ import { QuizDetailsComponent } from './components/quiz/quiz-details/quiz-detail
 import { QuizSubmitComponent } from './components/quiz/quiz-submit/quiz-submit.component';
 import {ReactiveFormsModule} from "@angular/forms";
 import { LayoutComponent } from './layout/layout.component';
+import {QuizPlayHomeComponent} from "./components/playquiz/quiz-home/quiz-home.component";
+import {QuizPlayComponent} from "./components/playquiz/quiz-play/quiz-play.component";
+import {QuizPlayService} from "./components/playquiz/services/quiz-play.service";
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { LayoutComponent } from './layout/layout.component';
     QuizListComponent,
     QuizDetailsComponent,
     QuizSubmitComponent,
-    LayoutComponent
+    LayoutComponent,
+    QuizPlayHomeComponent,
+    QuizPlayComponent
   ],
     imports: [
         BrowserModule,
@@ -36,7 +41,7 @@ import { LayoutComponent } from './layout/layout.component';
         HttpClientModule,
         ReactiveFormsModule
     ],
-  providers: [],
+  providers: [QuizPlayService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

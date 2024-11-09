@@ -20,7 +20,8 @@ export class QuizSubmitComponent implements OnInit {
       private questionService: QuestionService
   ) {
     this.quizForm = this.fb.group({
-      quizName: ['', Validators.required]
+      quizName: ['', Validators.required],
+      quizDescription: ['', Validators.required]
     });
   }
 
@@ -60,6 +61,7 @@ export class QuizSubmitComponent implements OnInit {
     if (this.quizForm.valid && this.selectedQuestions.length > 0) {
       const quizData = {
         quizName: this.quizForm.value.quizName,
+        quizDescription: this.quizForm.value.quizDescription,
         questions: this.selectedQuestions
       };
 console.log(quizData);

@@ -11,6 +11,8 @@ import {QuizListComponent} from "./components/quiz/quiz-list/quiz-list.component
 import {QuizDetailsComponent} from "./components/quiz/quiz-details/quiz-details.component";
 import {QuizSubmitComponent} from "./components/quiz/quiz-submit/quiz-submit.component";
 import {LayoutComponent} from "./layout/layout.component";
+import {QuizPlayHomeComponent} from "./components/playquiz/quiz-home/quiz-home.component";
+import {QuizPlayComponent} from "./components/playquiz/quiz-play/quiz-play.component";
 
 const routes: Routes = [
   {
@@ -28,6 +30,8 @@ const routes: Routes = [
     ]
   },
   { path: '', component: HomeComponent },  // Page d'accueil par défaut
+  { path: 'play/quiz/home', component: QuizPlayHomeComponent },  // Page d'accueil par défaut
+  { path: 'play/quiz/:id', component: QuizPlayComponent },  // Page d'accueil par défaut
 
 ];
 

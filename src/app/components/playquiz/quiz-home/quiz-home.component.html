@@ -1,0 +1,27 @@
+<!-- src/app/components/home/home.component.html -->
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+            Tester vos capacitées de développement "Python, JAVA, HTML et C".
+            <code>Quiz Master</code> est votre guide d'amélioration
+        </p>
+        <div class="gap-2 mb-5">
+            <a [routerLink]="['/']" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 mx-3 rounded-pill">
+                Accueil
+            </a>
+        </div>
+
+        <div class="d-inline-flex gap-2 mb-5 d-block">
+            <div *ngIf="QuizList.length === 0">
+                <p>Aucune quiz disponible.</p>
+            </div>
+            <div class="row g-4 py-5 row-cols-1 row-cols-lg-3" *ngIf="QuizList.length > 0">
+                <div class="feature col" *ngFor="let quiz of QuizList">
+                    <h3 class="fs-2 text-body-emphasis">Quiz {{ quiz.quizName }}</h3>
+                    <p *ngIf="quiz.quizDescription" >Description du Quiz {{ quiz.quizDescription }}</p>
+                    <a [routerLink]="['/play/quiz', quiz.quizId]" class="btn btn-info icon-link">Démarrer</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

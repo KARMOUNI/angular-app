@@ -1,0 +1,31 @@
+<div class="container my-5">
+    <div class="p-5 text-center bg-body-tertiary rounded-3">
+        <p class="col-lg-8 mx-auto fs-5 text-muted">
+            Tester vos capacitées de développement "Python, JAVA, HTML et C".
+            <code>Quiz Master</code> est votre guide d'amélioration
+        </p>
+        <div *ngIf="score !== null" class="col-lg-8 mx-auto fs-5 text-muted alert alert-danger" role="alert">
+            <h2>Votre score: {{ score }} / {{ questions.length }}</h2>
+        </div>
+        <div class="text-start mt-5 pt-5">
+            <form [formGroup]="quizForm" (ngSubmit)="onSubmit()">
+                <div *ngFor="let question of questions; let i = index">
+                    <h3>{{ question.questionText }}</h3>
+                    <div *ngFor="let option of question.options">
+                        <input type="radio" [formControlName]="'question_' + i" [value]="option">
+                        {{ option }}
+                    </div>
+                </div>
+                <div class="text-end">
+                    <a [routerLink]="['/play/quiz/home']" class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 mx-3 rounded-pill">
+                        << Liste des Quizs
+                    </a>
+                    <button type="submit"  class="d-inline-flex align-items-center btn btn-primary btn-lg px-4 rounded-pill">Envoyer Quiz</button>
+                </div>
+            </form>
+        </div>
+        <div *ngIf="score !== null" class="col-lg-8 mx-auto fs-5 text-muted alert alert-danger my-4" role="alert">
+            <h2>Votre score: {{ score }} / {{ questions.length }}</h2>
+        </div>
+    </div>
+</div>
